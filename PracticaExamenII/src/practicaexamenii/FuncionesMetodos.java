@@ -98,6 +98,96 @@ public class FuncionesMetodos {
             vec[i]=(int) (Math.random()*30+1);            
         }
         return vec;              
-}
+    }
+
+//1. Cree una matriz de enteros de 5x5 e inicialícela con valores aleatorios.
+    public int[][] iniciarMatRdm(int[][] matriz){
+        int mat[][] = matriz;
+        for(int i=0; i<mat.length-1; i++){
+            for(int j=0; j<mat.length-1; j++){
+                mat[i][j]= (int)(Math.random()*5+1);            
+            }
+        }
+        return mat;
+    }
+    
+//2. Cree una función que permita mostrar los valores de la matriz en pantalla.
+    public static String mostrarMat(int[][] matriz) {
+        String str= "";
+        for(int i = 0; i<matriz.length-1; i++){
+            for(int j = 0; j<matriz.length-1; j++){
+                if(j!=matriz.length-2){
+                    str += matriz[i][j] + "  ";   
+                }else{
+                    str += matriz[i][j];
+                }
+            }
+            str += "\n";   
+        }
+        return str;
+    }
+    
+// 3. Programe el producto de una matriz por un número. Dado un número x y la 
+//    matriz M, el resultado de esta operación es el multiplicar x con cada
+//    una de las entradas de la matriz.Programe esto desde 0.
+    
+    public static String productoMat(int matriz[][], int x){
+        String str= "";
+        int cont = 0;
+        for(int i=0; i<matriz.length-1;i++){
+            for(int j=0; j<matriz.length-1;j++){
+                cont += cont + (matriz[i][j]*x);
+                str += (matriz[i][j]*x) + " ";
+            }  
+            str += "\n";
+        }
+            str += "\n" + "Total: " + cont;        
+        return str;
+    }
+//4. Cree un método que reciba un número y convierta en -1 todas las 
+//   entradas de la matriz que tengan este número.
+    
+    public static String elimElemMat(int matriz[][], int valor){
+        String str = "";
+        for (int i = 0; i < matriz.length-1; i++) {
+            for (int j = 0; j < matriz.length-1; j++) {
+                if(matriz[i][j]==valor){
+                    matriz[i][j] = -1;
+                }
+                str += matriz[i][j]+ " ";
+            }
+            str += "\n";
+        }
+     return str;
+    }
+    
+//5. Cree el método intercambiarColumna(int columna1, int columna2) que 
+//   intercambie las entradas de la columna 1 con las de la columna 2. Debe 
+//   programar esto desde 0.
+    
+    public static String intercambiarColumna(int[][] matriz){
+        String str = "";
+        for (int i = 0; i < matriz.length-1; i++) {
+            for (int j = matriz.length-1; j >= 0; j--) {
+                str += matriz[i][j]+ " ";
+            }
+            str += "\n";
+        }
+        return str;        
+    }
+    
+    
+//Otros
+    int[][] traspuesta(int mat[][]){
+        int matT[][] = new int[mat[0].length][mat.length];
+        
+        for (int i = 0; i < matT.length; i++) {
+            for (int j = 0; j < matT[0].length; j++) {
+                matT[i][j] = mat[j][i];
+            }
+        }
+        
+        return matT;
+    }    
     
 }
