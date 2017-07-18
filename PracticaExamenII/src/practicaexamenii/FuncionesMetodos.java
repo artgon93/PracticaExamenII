@@ -164,17 +164,31 @@ public class FuncionesMetodos {
 //5. Cree el método intercambiarColumna(int columna1, int columna2) que 
 //   intercambie las entradas de la columna 1 con las de la columna 2. Debe 
 //   programar esto desde 0.
-    
-    public static String intercambiarColumna(int[][] matriz){
-        String str = "";
-        for (int i = 0; i < matriz.length-1; i++) {
-            for (int j = matriz.length-1; j >= 0; j--) {
-                str += matriz[i][j]+ " ";
-            }
-            str += "\n";
+    public static void intercambiarColumna(int c1, int c2, int[][] matriz) {
+        //String str="";
+        for (int i = 0; i < matriz.length; i++) {
+            int temp = matriz[i][c1];
+            matriz[i][c1] = matriz[i][c2];
+            matriz[i][c2] = temp;
         }
-        return str;        
+        
+       // return str;
     }
+    
+    
+    
+    
+//    public static String intercambiarColumna(int[][] matriz){
+//        String str = "";
+//        for (int i = 0; i < matriz[0].length-1; i++) {
+//            for (int j = matriz.length-1; j >= 0; j--) {
+//                str += matriz[i][j]+ " ";
+//            }
+//            str += "\n";
+//        }
+//        return str;        
+//    }
+    
     
     
 //Otros

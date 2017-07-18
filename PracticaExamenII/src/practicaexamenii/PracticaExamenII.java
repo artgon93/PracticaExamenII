@@ -42,14 +42,18 @@ public class PracticaExamenII {
 //        System.out.println(objeto1.mostrarVec(vector2));
 //        System.out.println(objeto1.ordenSeleccion((vector2)));
 //        
-        int matriz1[][] = new int[3][3];
+        int matriz1[][] = new int[4][4];
         
         objeto1.iniciarMatRdm(matriz1);
         System.out.println(objeto1.mostrarMat(matriz1));
         int valor = 2;
         //System.out.println(objeto1.elimElemMat(matriz1,valor));
         
-        System.out.println(objeto1.intercambiarColumna(matriz1));
+        int c1 = 2;
+        int c2 = 1;
+        
+        objeto1.intercambiarColumna(c1, c2, matriz1);
+        System.out.println(objeto1.mostrarMat(matriz1));
         
         //System.out.println(objeto1.mostrarMat(objeto1.traspuesta(matriz1)));
         
